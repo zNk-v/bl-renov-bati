@@ -522,8 +522,8 @@ footer a:hover{color:var(--brand-600)}
         </form>
         <div class="form-ok" id="formOk">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
-          <h3>Demande envoyée !</h3>
-          <p>Merci, Brian vous rappelle très vite. Pour une urgence, appelez le 06 43 14 22 97.</p>
+          <h3>Votre SMS est prêt !</h3>
+          <p>Appuyez sur « Envoyer » dans votre application de messages pour transmettre votre demande à Brian. Vous préférez appeler ? 06 43 14 22 97.</p>
         </div>
       </div>
     </div>
@@ -577,7 +577,7 @@ footer a:hover{color:var(--brand-600)}
         </ul>
       </div>
     </div>
-    <div class="ft-bottom">© <span id="yr"></span> BL Renov Bati — Couverture, ravalement & peinture en Essonne · SIREN 800 503 112. Tous droits réservés.</div>
+    <div class="ft-bottom">© <span id="yr"></span> BL Renov Bati — Couverture, ravalement & peinture en Essonne · SIREN 800 503 112. Tous droits réservés.<br><a href="mentions-legales.html" style="color:#9fb0c7">Mentions légales</a> · <a href="confidentialite.html" style="color:#9fb0c7">Politique de confidentialité</a></div>
   </div>
 </footer>
 
@@ -619,28 +619,27 @@ addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key
 function track(action){ if(typeof gtag==='function'){ gtag('event',action); } }
 document.querySelectorAll('[data-call]').forEach(a=>a.addEventListener('click',()=>track('clic_appel')));
 
-// Formulaire — TODO Teddy : coller l'URL Formspree ci-dessous pour recevoir les leads par mail.
-const FORM_ENDPOINT = "";
+// Formulaire → ouvre l'app SMS du visiteur, message pré-rempli, destinataire = Brian.
+const SMS_TO = "+33643142297"; // numéro de Brian (BL Renov Bati)
 const form=document.getElementById('quoteForm');
-form.addEventListener('submit',async(e)=>{
+form.addEventListener('submit',(e)=>{
   e.preventDefault();
-  const btn=form.querySelector('button[type=submit]');
   if(!form.nom.value.trim()||!form.telephone.value.trim()){ form.reportValidity(); return; }
-  btn.disabled=true; btn.textContent='Envoi…';
-  try{
-    if(FORM_ENDPOINT){
-      await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
-    }else{
-      const d=new FormData(form), b=[...d.entries()].map(([k,v])=>k+': '+v).join('%0D%0A');
-      window.location.href='mailto:?subject=Demande%20de%20devis%20-%20BL%20Renov%20Bati&body='+b;
-    }
-    form.style.display='none';
-    document.getElementById('formOk').style.display='block';
-    track('formulaire_devis');
-  }catch(err){
-    btn.disabled=false; btn.textContent='Recevoir mon devis gratuit';
-    alert("Une erreur est survenue. Appelez-nous au 06 43 14 22 97.");
-  }
+  const v=(n)=>form[n]?form[n].value.trim():'';
+  const lignes=[
+    'Demande de devis - BL Renov Bati',
+    'Nom : '+v('nom'),
+    'Tel : '+v('telephone'),
+    v('ville')        ? 'Ville : '+v('ville')              : '',
+    v('type_travaux') ? 'Travaux : '+v('type_travaux')     : '',
+    v('message')      ? 'Projet : '+v('message')           : ''
+  ].filter(Boolean);
+  const body=encodeURIComponent(lignes.join('\n'));
+  // format compatible iOS et Android
+  window.location.href='sms:'+SMS_TO+'?&body='+body;
+  form.style.display='none';
+  document.getElementById('formOk').style.display='block';
+  track('formulaire_devis');
 });
 </script>
 
