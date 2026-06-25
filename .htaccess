@@ -1,0 +1,4 @@
+# Redirige www vers la version sans www (canonique), en HTTPS, 301 permanent.
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.lafleur-toiture\.fr$ [NC]
+RewriteRule ^(.*)$ https://lafleur-toiture.fr/$1 [L,R=301]
