@@ -589,6 +589,32 @@ footer a:hover{color:var(--brand-600)}
   <a href="#devis" class="btn btn-quote">Devis gratuit</a>
 </div>
 
+<!-- COOKIE CONSENT (RGPD/CNIL) -->
+<style>
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);padding:18px 20px;display:none;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:780px;margin:0 auto}
+.cookie.show{display:flex}
+.cookie-txt strong{font-family:var(--f-head);color:var(--ink);font-size:1rem;display:block;margin-bottom:4px}
+.cookie-txt p{font-size:.9rem;color:var(--slate-500);max-width:540px}
+.cookie-txt a{color:var(--brand);text-decoration:underline}
+.cookie-btns{display:flex;gap:10px;flex:none}
+.cookie-btns button{font-family:var(--f-head);font-weight:700;font-size:.95rem;padding:12px 22px;border-radius:10px;cursor:pointer;border:0;min-height:46px}
+.ck-refuse{background:var(--slate-100);color:var(--slate-700)}
+.ck-refuse:hover{background:var(--slate-200)}
+.ck-accept{background:var(--cta);color:#fff}
+.ck-accept:hover{background:var(--cta-600)}
+@media(max-width:600px){.cookie{left:8px;right:8px;bottom:8px;padding:16px}.cookie-btns{width:100%}.cookie-btns button{flex:1}}
+</style>
+<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Gestion des cookies">
+  <div class="cookie-txt">
+    <strong>🍪 Cookies &amp; mesure de nos publicités</strong>
+    <p>Avec votre accord, nous utilisons un cookie pour mesurer l'efficacité de nos campagnes publicitaires. Aucun traceur n'est déposé sans votre consentement. <a href="confidentialite.html">En savoir plus</a>.</p>
+  </div>
+  <div class="cookie-btns">
+    <button type="button" class="ck-refuse" id="ckRefuse">Refuser</button>
+    <button type="button" class="ck-accept" id="ckAccept">Accepter</button>
+  </div>
+</div>
+
 <!-- LIGHTBOX -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo de réalisation">
   <button class="x" id="lbX" aria-label="Fermer">×</button>
@@ -643,6 +669,39 @@ form.addEventListener('submit',(e)=>{
   document.getElementById('formOk').style.display='block';
   track('formulaire_devis');
 });
+</script>
+
+<script>
+// ===== Consentement cookies (RGPD/CNIL) =====
+// 👉 Colle ici ton ID Google Ads quand tu l'auras (ex : "AW-123456789").
+//    Tant que c'est vide, AUCUN cookie n'est posé et le bandeau ne s'affiche pas.
+const GADS_ID = "";
+
+function loadGoogleAds(){
+  if(!GADS_ID) return;
+  const s=document.createElement('script');
+  s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+GADS_ID;
+  document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=function(){dataLayer.push(arguments);};
+  gtag('js',new Date());
+  gtag('config',GADS_ID);
+}
+
+(function(){
+  const box=document.getElementById('cookie');
+  if(!GADS_ID) return;                         // pas de traceur => pas de bandeau
+  const choix=localStorage.getItem('cookieConsent');
+  if(choix==='accept'){ loadGoogleAds(); return; }
+  if(choix==='refuse'){ return; }
+  box.classList.add('show');                   // 1re visite : on demande
+  document.getElementById('ckAccept').onclick=()=>{
+    localStorage.setItem('cookieConsent','accept'); box.classList.remove('show'); loadGoogleAds();
+  };
+  document.getElementById('ckRefuse').onclick=()=>{
+    localStorage.setItem('cookieConsent','refuse'); box.classList.remove('show');
+  };
+})();
 </script>
 
 <script type="application/ld+json">
