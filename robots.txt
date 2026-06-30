@@ -1,4 +1,35 @@
+# Robots — lafleur-toiture.fr
+# Tous les robots sont autorisés, y compris les IA (pour être cité dans ChatGPT, Claude, Gemini, Perplexity, Copilot).
+
 User-agent: *
+Allow: /
+
+# Robots d'IA explicitement autorisés
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://lafleur-toiture.fr/sitemap.xml
