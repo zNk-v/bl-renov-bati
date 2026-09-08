@@ -1,4 +1,11 @@
-# Redirige www vers la version sans www (canonique), en HTTPS, 301 permanent.
 RewriteEngine On
+
+# Redirige www vers la version sans www (canonique), en HTTPS, 301 permanent.
 RewriteCond %{HTTP_HOST} ^www\.lafleur-toiture\.fr$ [NC]
 RewriteRule ^(.*)$ https://lafleur-toiture.fr/$1 [L,R=301]
+
+# /index.html renvoie vers / (URL canonique unique pour l'accueil).
+# La condition sur THE_REQUEST ne matche que la requête entrante du navigateur,
+# pas la réécriture interne du serveur : pas de boucle de redirection.
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [L,R=301]
