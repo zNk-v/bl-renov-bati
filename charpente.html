@@ -3,21 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Charpente : réparation et traitement en Essonne (91) | Brian Lafleur</title>
+<title>Charpente : réparation et traitement (91) | Brian Lafleur</title>
 <meta name="description" content="Réparation, renfort et traitement de charpente, remplacement de liteaunage en Essonne (91) et sud du 92. Chantier réalisé à Antony. Devis gratuit sous 24h.">
 <link rel="canonical" href="https://lafleur-toiture.fr/charpente.html">
 <meta name="theme-color" content="#C0492C">
-<meta property="og:title" content="Charpente : réparation et traitement en Essonne (91) | Brian Lafleur">
+<meta property="og:title" content="Charpente : réparation et traitement (91) | Brian Lafleur">
 <meta property="og:description" content="Réparation, renfort et traitement de charpente, remplacement de liteaunage en Essonne (91) et sud du 92. Chantier réalisé à Antony. Devis gratuit sous 24h.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Brian Lafleur · BL Renov Bati">
 <meta property="og:url" content="https://lafleur-toiture.fr/charpente.html">
 <meta property="og:image" content="https://lafleur-toiture.fr/og-image.jpg">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <style>
 :root{
   --ink:#0F2747; --ink-soft:#2A3B57; --ink-deep:#0A1B32;
@@ -120,6 +121,8 @@ footer a{color:var(--on-dark-soft)}
 .review .st{color:#E5A53B;letter-spacing:2px;margin-bottom:8px}
 .review p{font-style:italic}
 .review b{display:block;margin-top:12px;font-family:var(--f-head);color:var(--ink);font-style:normal}
+.review-cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.review-cta a{font-weight:600;color:var(--brick-dark)}
 .faq{max-width:820px;margin-top:30px}
 .q{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
 .q summary{padding:18px 52px 18px 22px;font-family:var(--f-head);font-weight:600;font-size:1.04rem;color:var(--ink);cursor:pointer;list-style:none;position:relative}
@@ -135,15 +138,32 @@ footer a{color:var(--on-dark-soft)}
 .foot-links{margin-top:14px;font-size:.84rem;line-height:1.9}
 .foot-links a{text-decoration:none}
 .foot-links a:hover{text-decoration:underline}
+.devis-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:38px;align-items:start}
+@media(max-width:860px){.devis-wrap{grid-template-columns:1fr}}
+.devis-form label{display:block;font-weight:600;color:var(--ink);font-size:.92rem;margin-bottom:14px}
+.devis-form input,.devis-form select,.devis-form textarea{display:block;width:100%;margin-top:6px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;font-weight:400;background:var(--white);color:var(--ink)}
+.devis-form input:focus,.devis-form select:focus,.devis-form textarea:focus{outline:2px solid var(--brick);outline-offset:1px;border-color:var(--brick)}
+.devis-form .row2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+@media(max-width:520px){.devis-form .row2{grid-template-columns:1fr}}
+.devis-form button{width:100%;margin-top:4px;font-family:inherit}
+.devis-form small{display:block;margin-top:10px;color:var(--muted);font-size:.82rem}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.devis-ok{display:none;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+.devis-ok strong{font-family:var(--f-head);font-size:1.25rem;color:var(--ink);display:block;margin-bottom:8px}
+.mbar{display:none}
+@media(max-width:760px){.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(245,241,234,.97);border-top:1px solid var(--line);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}.mbar .btn{flex:1;padding:13px 10px;font-size:.98rem}body{padding-bottom:80px}}
+.btn-quote{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.lost{padding:70px 0}
+.lost .svc-links{margin-top:20px}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap hd">
-    <a href="/" aria-label="Brian Lafleur, couvreur — accueil"><img src="assets/logo.png" alt="Brian Lafleur — Couverture · Ravalement"></a>
+    <a href="/" aria-label="Brian Lafleur, couvreur — accueil"><img src="/assets/logo.png" alt="Brian Lafleur — Couverture · Ravalement"></a>
     <div class="hd-right">
-      <img class="hd-badge" src="assets/garantie-decennale.svg" alt="Garantie décennale, artisan assuré" width="236" height="68">
+      <img class="hd-badge" src="/assets/garantie-decennale.svg" alt="Garantie décennale, artisan assuré" width="236" height="68">
       <div class="hd-rating"><span class="stars">★★★★★</span> 5,0 · 18 avis Google</div>
       <a href="tel:+33643142297" class="hd-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>06 43 14 22 97</a>
     </div>
@@ -155,8 +175,8 @@ footer a{color:var(--on-dark-soft)}
     <nav class="crumb"><a href="/">Accueil</a> › Charpente</nav>
     <h1>Réparation et traitement de charpente en Essonne (91)</h1>
     <p>La charpente porte toute votre toiture. Quand le bois est abîmé par une fuite ancienne, des insectes ou le temps, la couverture finit par onduler et fuir. Brian Lafleur contrôle, répare et traite la charpente, et remplace le liteaunage avant de reposer les tuiles.</p>
-    <div class="hero-cta"><a href="tel:+33643142297" class="btn btn-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>06 43 14 22 97</a><a href="/#devis" class="btn btn-light">Demander un devis gratuit</a></div>
-    <div class="trust-row"><img src="assets/garantie-decennale.svg" alt="Garantie décennale, artisan assuré" width="236" height="68"><span>★★★★★ 5,0 sur Google (18 avis)</span><span>Devis gratuit sous 24h</span></div>
+    <div class="hero-cta"><a href="tel:+33643142297" class="btn btn-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>06 43 14 22 97</a><a href="#devis" class="btn btn-light">Demander un devis gratuit</a></div>
+    <div class="trust-row"><img src="/assets/garantie-decennale.svg" alt="Garantie décennale, artisan assuré" width="236" height="68"><span>Décennale assurée par Allianz</span><span>★★★★★ 5,0 sur Google</span><span>Devis gratuit sous 24h</span></div>
   </div>
 </section>
 
@@ -182,7 +202,7 @@ footer a{color:var(--on-dark-soft)}
     <span class="eyebrow">Conseil d'artisan</span>
     <h2>Charpente et couverture, le même chantier</h2>
     <p>Le meilleur moment pour s&#x27;occuper de la charpente, c&#x27;est quand la couverture est déposée. Tout est visible et accessible. Sur le chantier d&#x27;Antony en photo, Brian a repris la charpente et posé un liteaunage neuf avant de refaire la toiture.</p><p>Pour un simple contrôle, Brian passe par les combles. Il vous montre ce qu&#x27;il voit et vous dit si un traitement ou une réparation est nécessaire, et avec quelle urgence.</p>
-    <div class="gal"><figure><img src="assets/photos/refection-charpente-liteaunage-toiture-antony-brian-lafleur-06.webp" alt="Réfection de charpente et liteaunage de toiture à Antony" width="1600" height="1200" loading="lazy" decoding="async"><figcaption>Charpente &amp; liteaunage · Antony</figcaption></figure><figure><img src="assets/photos/chantier-03.webp" alt="Liteaunage bois neuf posé sur écran sous-toiture" width="1200" height="900" loading="lazy" decoding="async"><figcaption>Liteaunage neuf</figcaption></figure><figure><img src="assets/photos/chantier-12.webp" alt="Faîtage et tuiles neuves vus du toit" width="480" height="640" loading="lazy" decoding="async"><figcaption>Couverture tuiles</figcaption></figure></div>
+    <div class="gal"><figure><img src="/assets/photos/refection-charpente-liteaunage-toiture-antony-brian-lafleur-06.webp" alt="Réfection de charpente et liteaunage de toiture à Antony" width="1600" height="1200" loading="lazy" decoding="async"><figcaption>Charpente &amp; liteaunage · Antony</figcaption></figure><figure><img src="/assets/photos/chantier-03.webp" alt="Liteaunage bois neuf posé sur écran sous-toiture" width="1200" height="900" loading="lazy" decoding="async"><figcaption>Liteaunage neuf</figcaption></figure><figure><img src="/assets/photos/chantier-12.webp" alt="Faîtage et tuiles neuves vus du toit" width="480" height="640" loading="lazy" decoding="async"><figcaption>Couverture tuiles</figcaption></figure></div>
   </div>
 </section>
 
@@ -195,6 +215,35 @@ footer a{color:var(--on-dark-soft)}
       <div class="step"><div class="n">2</div><b>Visite & devis</b><p>Brian vient sur place gratuitement et vous remet un devis clair sous 24h.</p></div>
       <div class="step"><div class="n">3</div><b>Chantier</b><p>Les travaux démarrent à la date convenue, chantier bâché et tenu propre.</p></div>
       <div class="step"><div class="n">4</div><b>Réception</b><p>Vous faites le tour du chantier avec Brian. Couverture garantie décennale.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="devis">
+  <div class="wrap devis-wrap">
+    <div>
+      <span class="eyebrow">Devis gratuit</span>
+      <h2>Votre devis sous 24h</h2>
+      <p class="lead">Décrivez votre projet en quelques mots. Brian vous rappelle pour fixer une visite et vous remettre un devis clair, sans engagement.</p>
+      <ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Réponse rapide, par téléphone</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Déplacement et devis gratuits</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Garantie décennale Allianz</li></ul>
+      <p style="margin-top:22px">Vous préférez parler de vive voix ? <a href="tel:+33643142297" style="font-weight:700;color:var(--brick-dark)">06 43 14 22 97</a></p>
+    </div>
+    <div>
+      <form class="card devis-form" data-devis data-ok="devisOk" novalidate>
+        <div class="row2">
+          <label>Nom *<input name="nom" autocomplete="name" required></label>
+          <label>Téléphone *<input name="telephone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+        </div>
+        <div class="row2">
+          <label>Ville<input name="ville" autocomplete="address-level2" value=""></label>
+          <label>Type de travaux<select name="type_travaux"><option value="">Sélectionnez…</option><option>Réfection complète de toiture</option><option>Réparation / fuite</option><option>Zinguerie / gouttières</option><option>Ravalement / peinture</option><option>Pose de Velux</option><option>Isolation</option><option>Démoussage / entretien</option><option selected>Charpente / ramonage</option><option>Autre</option></select></label>
+        </div>
+        <label>Votre projet<textarea name="message" rows="3"></textarea></label>
+        <div class="hp" aria-hidden="true"><label>Laissez ce champ vide<input name="site_web" tabindex="-1" autocomplete="off"></label></div>
+        <button type="submit" class="btn btn-call">Recevoir mon devis gratuit</button>
+        <small>Vos coordonnées servent uniquement à vous recontacter. <a href="/confidentialite.html">Confidentialité</a></small>
+      </form>
+      <div class="devis-ok" id="devisOk" role="status"><strong>Demande envoyée !</strong><p>Merci, Brian vous rappelle sous 24h ouvrées.</p></div>
     </div>
   </div>
 </section>
@@ -212,8 +261,8 @@ footer a{color:var(--on-dark-soft)}
     <span class="eyebrow">Zone d'intervention</span>
     <h2>En Essonne et dans le sud du 92</h2>
     <p class="lead">Au départ de Chilly-Mazarin, Brian Lafleur intervient dans les communes suivantes :</p>
-    <div class="tags"><a href="/">Chilly-Mazarin</a><a href="couvreur-longjumeau.html">Couvreur Longjumeau</a><a href="couvreur-morangis.html">Couvreur Morangis</a><a href="couvreur-massy.html">Couvreur Massy</a><a href="couvreur-wissous.html">Couvreur Wissous</a><a href="couvreur-champlan.html">Couvreur Champlan</a><a href="couvreur-savigny-sur-orge.html">Couvreur Savigny-sur-Orge</a><span>Saulx-les-Chartreux</span><span>Épinay-sur-Orge</span><a href="couvreur-palaiseau.html">Couvreur Palaiseau</a><span>Villebon-sur-Yvette</span><span>Verrières-le-Buisson</span><span>Igny</span><a href="couvreur-antony.html">Couvreur Antony</a><span>Sceaux</span><span>Bourg-la-Reine</span><span>Châtenay-Malabry</span><span>Le Plessis-Robinson</span><span>Fontenay-aux-Roses</span></div>
-    <div class="svc-links"><a href="refection-toiture.html">Réfection de toiture</a><a href="recherche-fuite-toiture.html">Recherche de fuite</a><a href="zinguerie.html">Zinguerie</a><a href="demoussage-toiture.html">Démoussage</a><a href="pose-velux.html">Pose de Velux</a><a href="isolation-toiture.html">Isolation</a><a href="ravalement-facade.html">Ravalement &amp; peinture</a><a href="ramonage.html">Ramonage</a><a href="/#realisations">Voir les chantiers</a></div>
+    <div class="tags"><a href="/">Chilly-Mazarin</a><a href="/couvreur-massy.html">Massy</a><a href="/couvreur-antony.html">Antony</a><a href="/couvreur-wissous.html">Wissous</a><a href="/couvreur-morangis.html">Morangis</a><a href="/couvreur-longjumeau.html">Longjumeau</a><a href="/couvreur-champlan.html">Champlan</a><a href="/couvreur-palaiseau.html">Palaiseau</a><a href="/couvreur-savigny-sur-orge.html">Savigny-sur-Orge</a><a href="/couvreur-bretigny-sur-orge.html">Brétigny-sur-Orge</a><a href="/couvreur-saulx-les-chartreux.html">Saulx-les-Chartreux</a><a href="/couvreur-epinay-sur-orge.html">Épinay-sur-Orge</a><a href="/couvreur-villebon-sur-yvette.html">Villebon-sur-Yvette</a><a href="/couvreur-verrieres-le-buisson.html">Verrières-le-Buisson</a><a href="/couvreur-igny.html">Igny</a><a href="/couvreur-sceaux.html">Sceaux</a><a href="/couvreur-bourg-la-reine.html">Bourg-la-Reine</a><a href="/couvreur-chatenay-malabry.html">Châtenay-Malabry</a><a href="/couvreur-le-plessis-robinson.html">Le Plessis-Robinson</a><a href="/couvreur-fontenay-aux-roses.html">Fontenay-aux-Roses</a></div>
+    <div class="svc-links"><a href="/refection-toiture.html">Réfection de toiture</a><a href="/recherche-fuite-toiture.html">Recherche de fuite</a><a href="/zinguerie.html">Zinguerie</a><a href="/demoussage-toiture.html">Démoussage</a><a href="/pose-velux.html">Pose de Velux</a><a href="/isolation-toiture.html">Isolation</a><a href="/ravalement-facade.html">Ravalement &amp; peinture</a><a href="/ramonage.html">Ramonage</a><a href="/#realisations">Voir les chantiers</a></div>
   </div>
 </section>
 
@@ -221,11 +270,13 @@ footer a{color:var(--on-dark-soft)}
   <div class="wrap">
     <h2>Parlons de votre projet</h2>
     <p>Déplacement et devis gratuits, réponse sous 24h, partout en Essonne et au sud du 92.</p>
-    <div class="hero-cta"><a href="tel:+33643142297" class="btn btn-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>06 43 14 22 97</a><a href="/#devis" class="btn btn-light">Demander un devis</a></div>
+    <div class="hero-cta"><a href="tel:+33643142297" class="btn btn-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>06 43 14 22 97</a><a href="#devis" class="btn btn-light">Demander un devis</a></div>
   </div>
 </section>
 
-<footer><div class="wrap">© <span id="yr"></span> Brian Lafleur · BL Renov Bati · Couverture, ravalement &amp; peinture en Essonne (91) et Hauts-de-Seine (92) · SIREN 800 503 112 · <a href="/">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · Site créé par <a href="https://sitaly.fr" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Sitaly</a><div class="foot-links">Prestations : <a href="refection-toiture.html">Réfection de toiture</a> · <a href="recherche-fuite-toiture.html">Recherche de fuite</a> · <a href="zinguerie.html">Zinguerie</a> · <a href="demoussage-toiture.html">Démoussage</a> · <a href="pose-velux.html">Pose de Velux</a> · <a href="isolation-toiture.html">Isolation</a> · <a href="charpente.html">Charpente</a> · <a href="ravalement-facade.html">Ravalement &amp; peinture</a> · <a href="ramonage.html">Ramonage</a><br>Couvreur à : <a href="/">Chilly-Mazarin</a> · <a href="couvreur-morangis.html">Morangis</a> · <a href="couvreur-wissous.html">Wissous</a> · <a href="couvreur-champlan.html">Champlan</a> · <a href="couvreur-longjumeau.html">Longjumeau</a> · <a href="couvreur-massy.html">Massy</a> · <a href="couvreur-antony.html">Antony</a> · <a href="couvreur-palaiseau.html">Palaiseau</a> · <a href="couvreur-savigny-sur-orge.html">Savigny-sur-Orge</a></div></div></footer>
+<footer><div class="wrap">© <span id="yr"></span> Brian Lafleur · BL Renov Bati · Couverture, ravalement &amp; peinture en Essonne (91) et Hauts-de-Seine (92) · SIREN 800 503 112 · <a href="/">Accueil</a> · <a href="/mentions-legales.html">Mentions légales</a> · <a href="/confidentialite.html">Confidentialité</a> · Site créé par <a href="https://sitaly.fr" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Sitaly</a><div class="foot-links">Prestations : <a href="/refection-toiture.html">Réfection de toiture</a> · <a href="/recherche-fuite-toiture.html">Recherche de fuite</a> · <a href="/zinguerie.html">Zinguerie</a> · <a href="/demoussage-toiture.html">Démoussage</a> · <a href="/pose-velux.html">Pose de Velux</a> · <a href="/isolation-toiture.html">Isolation</a> · <a href="/charpente.html">Charpente</a> · <a href="/ravalement-facade.html">Ravalement &amp; peinture</a> · <a href="/ramonage.html">Ramonage</a><br>Couvreur à : <a href="/">Chilly-Mazarin</a> · <a href="/couvreur-massy.html">Massy</a> · <a href="/couvreur-antony.html">Antony</a> · <a href="/couvreur-wissous.html">Wissous</a> · <a href="/couvreur-morangis.html">Morangis</a> · <a href="/couvreur-longjumeau.html">Longjumeau</a> · <a href="/couvreur-champlan.html">Champlan</a> · <a href="/couvreur-palaiseau.html">Palaiseau</a> · <a href="/couvreur-savigny-sur-orge.html">Savigny-sur-Orge</a> · <a href="/couvreur-bretigny-sur-orge.html">Brétigny-sur-Orge</a> · <a href="/couvreur-saulx-les-chartreux.html">Saulx-les-Chartreux</a> · <a href="/couvreur-epinay-sur-orge.html">Épinay-sur-Orge</a> · <a href="/couvreur-villebon-sur-yvette.html">Villebon-sur-Yvette</a> · <a href="/couvreur-verrieres-le-buisson.html">Verrières-le-Buisson</a> · <a href="/couvreur-igny.html">Igny</a> · <a href="/couvreur-sceaux.html">Sceaux</a> · <a href="/couvreur-bourg-la-reine.html">Bourg-la-Reine</a> · <a href="/couvreur-chatenay-malabry.html">Châtenay-Malabry</a> · <a href="/couvreur-le-plessis-robinson.html">Le Plessis-Robinson</a> · <a href="/couvreur-fontenay-aux-roses.html">Fontenay-aux-Roses</a></div></div></footer>
+
+<div class="mbar"><a href="tel:+33643142297" class="btn btn-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Appeler</a><a href="#devis" class="btn btn-quote">Devis gratuit</a></div>
 
 <script type="application/ld+json">
 {
@@ -249,19 +300,20 @@ footer a{color:var(--on-dark-soft)}
  },
  "areaServed": [
   "Chilly-Mazarin",
-  "Longjumeau",
-  "Morangis",
   "Massy",
+  "Antony",
   "Wissous",
+  "Morangis",
+  "Longjumeau",
   "Champlan",
+  "Palaiseau",
   "Savigny-sur-Orge",
+  "Brétigny-sur-Orge",
   "Saulx-les-Chartreux",
   "Épinay-sur-Orge",
-  "Palaiseau",
   "Villebon-sur-Yvette",
   "Verrières-le-Buisson",
   "Igny",
-  "Antony",
   "Sceaux",
   "Bourg-la-Reine",
   "Châtenay-Malabry",
@@ -334,6 +386,7 @@ footer a{color:var(--on-dark-soft)}
 }
 </script>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script src="/assets/devis.js" defer></script>
 <script src="/assets/consent.js" defer></script>
 </body>
 </html>

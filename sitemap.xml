@@ -108,7 +108,71 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-bretigny-sur-orge.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-saulx-les-chartreux.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-epinay-sur-orge.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-villebon-sur-yvette.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-verrieres-le-buisson.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-igny.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-sceaux.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-bourg-la-reine.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-chatenay-malabry.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-le-plessis-robinson.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lafleur-toiture.fr/couvreur-fontenay-aux-roses.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
-<!-- mentions-legales.html et confidentialite.html sont volontairement en noindex
-     (pages légales sans valeur de recherche) : elles ne doivent PAS figurer ici,
-     sinon Search Console remonte « Exclue par la balise noindex ». -->
+<!-- mentions-legales.html, confidentialite.html et 404.html sont volontairement en noindex : ne pas les ajouter ici. -->
