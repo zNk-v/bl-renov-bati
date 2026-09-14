@@ -97,6 +97,12 @@ footer a{color:var(--on-dark-soft)}
 .media{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);margin-top:34px}
 .media img{width:100%;height:auto;display:block}
 
+.hd-badge{height:44px;width:auto;display:block}
+@media(max-width:900px){.hd-badge{display:none}}
+.trust-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:26px}
+.trust-row img{height:62px;width:auto;display:block}
+.trust-row span{color:var(--on-dark);font-size:.93rem;font-weight:600}
+
 .prose p{max-width:70ch;margin-bottom:14px;font-size:1.03rem}
 .card .more{display:inline-block;margin-top:12px;font-weight:600;color:var(--brick-dark);text-decoration:none}
 .card .more:hover{text-decoration:underline}
@@ -121,6 +127,11 @@ footer a{color:var(--on-dark-soft)}
 .q summary::after{content:"+";position:absolute;right:22px;top:14px;color:var(--brick);font-size:1.5rem;line-height:1.2}
 .q[open] summary::after{content:"\2212"}
 .q .a{padding:0 22px 18px;font-size:.98rem}
+.hd-badge{height:44px;width:auto;display:block}
+@media(max-width:900px){.hd-badge{display:none}}
+.trust-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:26px}
+.trust-row img{height:62px;width:auto;display:block}
+.trust-row span{color:var(--on-dark);font-size:.93rem;font-weight:600}
 .foot-links{margin-top:14px;font-size:.84rem;line-height:1.9}
 .foot-links a{text-decoration:none}
 .foot-links a:hover{text-decoration:underline}
@@ -132,6 +143,7 @@ footer a{color:var(--on-dark-soft)}
   <div class="wrap hd">
     <a href="/" aria-label="Brian Lafleur, couvreur — accueil"><img src="assets/logo.png" alt="Brian Lafleur — Couverture · Ravalement"></a>
     <div class="hd-right">
+      <img class="hd-badge" src="assets/garantie-decennale.svg" alt="Garantie décennale, artisan assuré" width="236" height="68">
       <div class="hd-rating"><span class="stars">★★★★★</span> 5,0 · 18 avis Google</div>
       <a href="tel:+33643142297" class="hd-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>06 43 14 22 97</a>
     </div>
@@ -144,6 +156,7 @@ footer a{color:var(--on-dark-soft)}
     <h1>Couvreur à Antony (92160)</h1>
     <p>Brian Lafleur travaille aussi dans le sud des Hauts-de-Seine. À Antony, il a refait une charpente et son liteaunage, posé des gouttières en zinc soudées sur mesure et ravalé une façade. Couverture, zinguerie ou façade : devis gratuit sous 24h.</p>
     <div class="hero-cta"><a href="tel:+33643142297" class="btn btn-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>06 43 14 22 97</a><a href="/#devis" class="btn btn-light">Demander un devis gratuit</a></div>
+    <div class="trust-row"><img src="assets/garantie-decennale.svg" alt="Garantie décennale, artisan assuré" width="236" height="68"><span>★★★★★ 5,0 sur Google (18 avis)</span><span>Devis gratuit sous 24h</span></div>
   </div>
 </section>
 
@@ -221,7 +234,7 @@ footer a{color:var(--on-dark-soft)}
   </div>
 </section>
 
-<footer><div class="wrap">© <span id="yr"></span> Brian Lafleur · Couverture, ravalement &amp; peinture en Essonne (91) et Hauts-de-Seine (92) · SIREN 800 503 112 · <a href="/">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · Site créé par <a href="https://sitaly.fr" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Sitaly</a><div class="foot-links">Prestations : <a href="refection-toiture.html">Réfection de toiture</a> · <a href="recherche-fuite-toiture.html">Recherche de fuite</a> · <a href="zinguerie.html">Zinguerie</a> · <a href="demoussage-toiture.html">Démoussage</a> · <a href="pose-velux.html">Pose de Velux</a> · <a href="isolation-toiture.html">Isolation</a> · <a href="charpente.html">Charpente</a> · <a href="ravalement-facade.html">Ravalement &amp; peinture</a> · <a href="ramonage.html">Ramonage</a><br>Couvreur à : <a href="/">Chilly-Mazarin</a> · <a href="couvreur-morangis.html">Morangis</a> · <a href="couvreur-wissous.html">Wissous</a> · <a href="couvreur-champlan.html">Champlan</a> · <a href="couvreur-longjumeau.html">Longjumeau</a> · <a href="couvreur-massy.html">Massy</a> · <a href="couvreur-antony.html">Antony</a> · <a href="couvreur-palaiseau.html">Palaiseau</a> · <a href="couvreur-savigny-sur-orge.html">Savigny-sur-Orge</a></div></div></footer>
+<footer><div class="wrap">© <span id="yr"></span> Brian Lafleur · BL Renov Bati · Couverture, ravalement &amp; peinture en Essonne (91) et Hauts-de-Seine (92) · SIREN 800 503 112 · <a href="/">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · Site créé par <a href="https://sitaly.fr" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Sitaly</a><div class="foot-links">Prestations : <a href="refection-toiture.html">Réfection de toiture</a> · <a href="recherche-fuite-toiture.html">Recherche de fuite</a> · <a href="zinguerie.html">Zinguerie</a> · <a href="demoussage-toiture.html">Démoussage</a> · <a href="pose-velux.html">Pose de Velux</a> · <a href="isolation-toiture.html">Isolation</a> · <a href="charpente.html">Charpente</a> · <a href="ravalement-facade.html">Ravalement &amp; peinture</a> · <a href="ramonage.html">Ramonage</a><br>Couvreur à : <a href="/">Chilly-Mazarin</a> · <a href="couvreur-morangis.html">Morangis</a> · <a href="couvreur-wissous.html">Wissous</a> · <a href="couvreur-champlan.html">Champlan</a> · <a href="couvreur-longjumeau.html">Longjumeau</a> · <a href="couvreur-massy.html">Massy</a> · <a href="couvreur-antony.html">Antony</a> · <a href="couvreur-palaiseau.html">Palaiseau</a> · <a href="couvreur-savigny-sur-orge.html">Savigny-sur-Orge</a></div></div></footer>
 
 <script type="application/ld+json">
 {
@@ -229,6 +242,7 @@ footer a{color:var(--on-dark-soft)}
  "@type": "RoofingContractor",
  "@id": "https://lafleur-toiture.fr/#business",
  "name": "Brian Lafleur",
+ "alternateName": "BL Renov Bati",
  "telephone": "+33643142297",
  "url": "https://lafleur-toiture.fr/",
  "address": {
