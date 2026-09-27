@@ -19,10 +19,11 @@ RewriteRule ^([a-z0-9-]+)/?$ /$1.html [L,R=301]
 # Page d'erreur aux couleurs du site.
 ErrorDocument 404 /404.html
 
-# Cache navigateur : photos et polices 1 an, badge/logos 1 mois, CSS/JS 1 semaine, HTML toujours revalidé.
+# Cache navigateur : photos, vidéos et polices 1 an, badge/logos 1 mois, CSS/JS 1 semaine, HTML toujours revalidé.
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/svg+xml "access plus 1 month"
