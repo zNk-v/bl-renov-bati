@@ -172,7 +172,7 @@ html:not(.stage-on) .stage-box.sound{pointer-events:auto}
 .ov-wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px 40px;flex-wrap:wrap}
 .ov-main{flex:1 1 420px;max-width:640px}
 .stage-ov h2{color:var(--white);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:16px;text-wrap:balance;text-shadow:0 2px 18px rgba(10,27,50,.45)}
-.chapters{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.chapters{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:480px}
 .chapters button{display:block;width:100%;padding:4px 0;border:0;background:none;text-align:left;cursor:pointer;pointer-events:auto;color:rgba(255,255,255,.62);font:600 .82rem var(--f-body);transition:color .2s}
 .chapters .bar{position:relative;display:block;height:3px;border-radius:3px;background:rgba(255,255,255,.3);overflow:hidden;margin-bottom:9px}
 .chapters .bar::after{content:"";position:absolute;inset:0;background:var(--white);transform:scaleX(var(--f,0));transform-origin:0 50%;transition:transform .26s linear}
@@ -408,10 +408,10 @@ footer a:hover{color:var(--brand-600)}
       <div class="stage-pin">
         <div class="house" id="house">
           <div class="stage-box" id="stageBox">
-            <img src="assets/video/chantier-garage-toiture-bac-acier-brian-lafleur-poster.webp" srcset="assets/video/chantier-garage-toiture-bac-acier-brian-lafleur-poster-960.webp 960w, assets/video/chantier-garage-toiture-bac-acier-brian-lafleur-poster.webp 1280w, assets/video/chantier-garage-toiture-bac-acier-brian-lafleur-poster-1920.webp 1920w" sizes="(max-width: 560px) 92vw, (max-width: 920px) 480px, 600px" width="1920" height="960" alt="Couvreurs Brian Lafleur sur l'ancienne toiture d'un garage, au début du chantier" fetchpriority="high">
-            <video id="stageVideo" muted playsinline preload="none" disablepictureinpicture aria-label="Vidéo du chantier : réfection complète de la toiture d'un garage"></video>
+            <img src="assets/video/toiture-garage-bac-acier-brian-lafleur-poster.webp" srcset="assets/video/toiture-garage-bac-acier-brian-lafleur-poster-960.webp 960w, assets/video/toiture-garage-bac-acier-brian-lafleur-poster.webp 1280w, assets/video/toiture-garage-bac-acier-brian-lafleur-poster-1920.webp 1920w" sizes="(max-width: 560px) 92vw, (max-width: 920px) 480px, 600px" width="1920" height="960" alt="Couvreurs Brian Lafleur posant la charpente bois neuve d'un garage" fetchpriority="high">
+            <video id="stageVideo" muted playsinline preload="none" disablepictureinpicture aria-label="Vidéo du chantier : charpente et couverture neuves d'un garage"></video>
             <button class="hud-mute" id="hudMute" type="button" aria-label="Couper le son"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m23 9-6 6M17 9l6 6"/></svg></button>
-            <button class="stage-play" id="stagePlay" type="button" hidden><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z"/></svg>Voir le chantier · 1 min</button>
+            <button class="stage-play" id="stagePlay" type="button" hidden><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10.4-6.5a1 1 0 0 0 0-1.8L9.5 4.6A1 1 0 0 0 8 5.5Z"/></svg>Voir le chantier</button>
           </div>
           <div class="roof" id="roof" aria-hidden="true">
             <svg viewBox="-60 -40 1120 280" focusable="false">
@@ -426,12 +426,11 @@ footer a:hover{color:var(--brand-600)}
         <div class="stage-ov" id="stageOv">
           <div class="ov-wrap" id="stageOvIn">
             <div class="ov-main">
-              <h2>Un toit de garage refait de A à Z</h2>
+              <h2>Charpente et toit neufs pour ce garage</h2>
               <ol class="chapters" aria-label="Étapes du chantier">
-                <li><button type="button" data-ch="0"><span class="bar"></span><span class="n">01</span>Dépose</button></li>
-                <li><button type="button" data-ch="1"><span class="bar"></span><span class="n">02</span>Charpente</button></li>
-                <li><button type="button" data-ch="2"><span class="bar"></span><span class="n">03</span>Bac acier</button></li>
-                <li><button type="button" data-ch="3"><span class="bar"></span><span class="n">04</span>Gouttière</button></li>
+                <li><button type="button" data-ch="0"><span class="bar"></span><span class="n">01</span>Charpente</button></li>
+                <li><button type="button" data-ch="1"><span class="bar"></span><span class="n">02</span>Bac acier</button></li>
+                <li><button type="button" data-ch="2"><span class="bar"></span><span class="n">03</span>Gouttière</button></li>
               </ol>
             </div>
             <div class="stage-cta">
@@ -778,12 +777,12 @@ function track(action,params){ if(window.blTrack){ window.blTrack(action,params)
 {
  "@context": "https://schema.org",
  "@type": "VideoObject",
- "name": "Réfection complète d'une toiture de garage en bac acier",
- "description": "Brian Lafleur, couvreur en Essonne, refait la toiture d'un garage : dépose de l'ancienne couverture ondulée, charpente bois neuve, pose de bac acier et gouttière neuve.",
- "thumbnailUrl": ["https://lafleur-toiture.fr/assets/video/chantier-garage-toiture-bac-acier-brian-lafleur-poster-1920.webp"],
- "uploadDate": "2026-09-27T12:00:00+02:00",
- "duration": "PT1M2S",
- "contentUrl": "https://lafleur-toiture.fr/assets/video/chantier-garage-toiture-bac-acier-brian-lafleur-son-h264.mp4",
+ "name": "Charpente et couverture en bac acier neuves sur un garage",
+ "description": "Brian Lafleur, couvreur en Essonne, pose une charpente bois neuve, une couverture en bac acier et une gouttière neuve sur un garage.",
+ "thumbnailUrl": ["https://lafleur-toiture.fr/assets/video/toiture-garage-bac-acier-brian-lafleur-poster-1920.webp"],
+ "uploadDate": "2026-10-04T12:00:00+02:00",
+ "duration": "PT38S",
+ "contentUrl": "https://lafleur-toiture.fr/assets/video/toiture-garage-bac-acier-brian-lafleur-son-h264.mp4",
  "publisher": {"@id": "https://lafleur-toiture.fr/#business"}
 }
 </script>

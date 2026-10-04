@@ -1,6 +1,6 @@
 /* Accueil : hero vidéo « on soulève le toit ».
    La vidéo du chantier tourne dans les murs de la maison du logo. Au défilement, le toit s'envole
-   et la vidéo passe en plein écran avec les 4 étapes du chantier, puis la page reprend normalement.
+   et la vidéo passe en plein écran avec les étapes du chantier, puis la page reprend normalement.
    La classe html.stage-on est posée dans le <head> (pas de mouvement réduit, overflow:clip supporté) ;
    sans elle, la maison reste fixe et un bouton lance la vidéo avec le son. */
 (function () {
@@ -24,13 +24,14 @@
   var muteBtn = document.getElementById('hudMute');
 
   // Meilleur format lu par le navigateur : AV1 (Chrome, Firefox, Android), HEVC (Safari, iPhone), sinon H.264 en 1280 px.
-  var DIR = '/assets/video/chantier-garage-toiture-bac-acier-brian-lafleur-';
+  var DIR = '/assets/video/toiture-garage-bac-acier-brian-lafleur-';
   var codec = video.canPlayType('video/mp4; codecs="av01.0.08M.08"') ? 'av1'
     : video.canPlayType('video/mp4; codecs="hvc1.1.6.L120.90"') ? 'hevc' : 'h264';
   var LOOP = DIR + 'boucle-' + codec + '.mp4';
   var FULL = DIR + 'son-' + codec + '.mp4';
-  // Début de chaque étape, en secondes : boucle muette (sans les fondus au noir) et montage complet avec le son.
-  var CH = { loop: [0, 13.55, 36.16, 49.01], full: [1.8, 17.84, 40.46, 55.91] };
+  // Début de chaque étape (charpente, bac acier, gouttière), en secondes. Même montage pour la boucle muette
+  // et la version avec le son, qui ajoute seulement le logo à la fin.
+  var CH = { loop: [0, 18.92, 31.77], full: [0, 18.92, 31.77] };
   var mode = 'loop', cur = -1, visible = true, loaded = false;
 
   /* ---------- Lecture ---------- */
@@ -47,7 +48,7 @@
     video.muted = !sound;
     video.loop = !sound;
     video.controls = sound && !root.classList.contains('stage-on');
-    video.src = sound ? FULL + '#t=' + CH.full[0] : LOOP; // le montage s'ouvre sur 2 s de noir : on démarre juste avant l'image
+    video.src = sound ? FULL : LOOP;
     box.classList.toggle('sound', sound);
     soundBtn.setAttribute('aria-pressed', String(sound));
     soundBtn.querySelector('span').textContent = sound ? 'Couper le son' : 'Avec le son';
@@ -60,16 +61,16 @@
     if (video.readyState >= 1) go(); else video.addEventListener('loadedmetadata', go, { once: true });
   }
   function steps() {
-    var c = CH[mode], t = video.currentTime, d = video.duration || 0, i = 0, k, end, f;
-    for (k = 1; k < 4; k++) if (t >= c[k]) i = k;
-    for (k = 0; k < 4; k++) {
-      end = k < 3 ? c[k + 1] : d;
+    var c = CH[mode], n = c.length, t = video.currentTime, d = video.duration || 0, i = 0, k, end, f;
+    for (k = 1; k < n; k++) if (t >= c[k]) i = k;
+    for (k = 0; k < n; k++) {
+      end = k < n - 1 ? c[k + 1] : d;
       f = k < i ? 1 : k > i ? 0 : end > c[k] ? Math.min(1, (t - c[k]) / (end - c[k])) : 0;
       chapBars[k].style.setProperty('--f', f);
     }
     if (i === cur) return;
     cur = i;
-    for (k = 0; k < 4; k++) {
+    for (k = 0; k < n; k++) {
       chapBtns[k].classList.toggle('on', k === i);
       if (k === i) chapBtns[k].setAttribute('aria-current', 'step'); else chapBtns[k].removeAttribute('aria-current');
     }
